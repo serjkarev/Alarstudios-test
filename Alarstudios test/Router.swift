@@ -15,7 +15,7 @@ protocol MainRouter {
 
 protocol RouterProtocol: MainRouter {
     func initialViewController()
-    func showItems()
+    func showItems(auth: Auth?)
     func showDetail()
 //    func popToRoot()
 }
@@ -36,9 +36,9 @@ class Router: RouterProtocol {
         }
     }
     
-    func showItems() {
+    func showItems(auth: Auth?) {
         if let navigationController = navigationController {
-            guard let itemsViewController = assemblyBuilder?.createItemsModule(router: self) else { return }
+            guard let itemsViewController = assemblyBuilder?.createItemsModule(auth: auth, router: self) else { return }
             navigationController.pushViewController(itemsViewController, animated: true)
         }
     }

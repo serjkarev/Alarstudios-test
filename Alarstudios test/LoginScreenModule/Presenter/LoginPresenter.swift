@@ -17,12 +17,15 @@ protocol LoginPresenterProtocol: class {
     init(view: LoginViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getEnter(userName: String?, passord: String?)
     func goToItemsList()
+    
+    var auth: Auth? { get set }
 }
 
 class LoginPresenter: LoginPresenterProtocol {    
     weak var view: LoginViewProtocol?
     var networkService: NetworkServiceProtocol?
     var router: RouterProtocol?
+    var auth: Auth?
     
     required init(view: LoginViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
@@ -36,7 +39,8 @@ class LoginPresenter: LoginPresenterProtocol {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
-                case .success(_):
+                case .success(let auth):
+                    self.auth = auth
                     self.view?.success()
                 case .failure(let error):
                     self.view?.failure(error: error)
@@ -46,7 +50,7 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func goToItemsList() {
-        router?.showItems()
+        router?.showItems(auth: auth)
     }
     
 }
