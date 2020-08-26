@@ -27,6 +27,13 @@ class ItemsPresenter: ItemsPresenterProtocol {
         self.view = view
         self.networkService = networkService
         self.router = router
+        getItems()
+    }
+    
+    func getItems() {
+        networkService?.getItems(completion: { [weak self] result in
+            
+        })
     }
     
     func itemPressed() {

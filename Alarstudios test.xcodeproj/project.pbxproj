@@ -99,8 +99,8 @@
 			children = (
 				52CF4A8F24F6790A0039F801 /* AppDelegate.swift */,
 				52CF4A9124F6790A0039F801 /* SceneDelegate.swift */,
-				52E0B9B424F68FDF0083F89E /* AssemblyBuilder.swift */,
 				52E0B9B224F68F1D0083F89E /* Router.swift */,
+				52E0B9B424F68FDF0083F89E /* AssemblyBuilder.swift */,
 				52E0B9A924F68DD20083F89E /* Services */,
 				52CF4AA324F6793F0039F801 /* LoginScreenModule */,
 				52CF4AAB24F67A3A0039F801 /* SecondScreenModule */,

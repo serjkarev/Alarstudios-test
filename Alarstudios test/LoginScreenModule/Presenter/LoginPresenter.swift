@@ -15,7 +15,8 @@ protocol LoginViewProtocol: class {
 
 protocol LoginPresenterProtocol: class {
     init(view: LoginViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
-    func getEnter()
+    func getEnter(userName: String?, passord: String?)
+    func goToItemsList()
 }
 
 class LoginPresenter: LoginPresenterProtocol {    
@@ -29,8 +30,23 @@ class LoginPresenter: LoginPresenterProtocol {
         self.router = router
     }
     
-    func getEnter() {
-        
+    func getEnter(userName: String?, passord: String?) {
+        guard let name = userName, let pass = passord else { return }
+        networkService?.getAuth(userName: name, password: pass, completion: { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    self.view?.success()
+                case .failure(let error):
+                    self.view?.failure(error: error)
+                }
+            }
+        })
+    }
+    
+    func goToItemsList() {
+        router?.showItems()
     }
     
 }

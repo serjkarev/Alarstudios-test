@@ -8,15 +8,22 @@
 
 import Foundation
 
+enum Status: String, Error {
+    case ok = "ok"
+    case error = "error"
+    case undefined
+}
+
 protocol NetworkServiceProtocol : class {
     func getAuth(userName: String, password: String, completion: @escaping (Result<Auth?, Error>) -> Void)
     func getItems(completion: @escaping (Result<Item?, Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
-    private let scheme = "http"
+    private let scheme = "https"
     private let host = "www.alarstudios.com"
-    private var code: String?
+    var code: String?
+    
     
     func getAuth(userName: String, password: String, completion: @escaping (Result<Auth?, Error>) -> Void) {
         let path = "/test/auth.cgi"
@@ -28,14 +35,21 @@ class NetworkService: NetworkServiceProtocol {
         URLQueryItem(name: "username", value: userName),
         URLQueryItem(name: "password", value: password)]
         guard let url = urlComponents.url else { return }
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             if let error = error {
                 completion(.failure(error))
                 return
             }
             do {
                 let obj = try JSONDecoder().decode(Auth.self, from: data!)
-                completion(.success(obj))
+                if obj.status == Status.ok.rawValue {
+                    self?.code = obj.code
+                    completion(.success(obj))
+                } else if obj.status == Status.error.rawValue {
+                    completion(.failure(Status.error))
+                } else {
+                    completion(.failure(Status.undefined))
+                }
             } catch {
                 completion(.failure(error))
             }
