@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct Auth {
-    
+struct Auth: Codable {
+    let status: String
+    let code: String
 }

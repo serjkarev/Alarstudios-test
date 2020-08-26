@@ -24,12 +24,23 @@ class Router: RouterProtocol {
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
     
+    init(navigationController: UINavigationController, assemblyBuilder: AssemblyBuilderProtocol) {
+        self.navigationController = navigationController
+        self.assemblyBuilder = assemblyBuilder
+    }
+    
     func initialViewController() {
-        
+        if let navigationController = navigationController {
+            guard let loginViewController = assemblyBuilder?.createLoginModule(router: self) else { return }
+            navigationController.viewControllers = [loginViewController]
+        }
     }
     
     func showItems() {
-        
+        if let navigationController = navigationController {
+            guard let itemsViewController = assemblyBuilder?.createItemsModule(router: self) else { return }
+            navigationController.pushViewController(itemsViewController, animated: true)
+        }
     }
     
     func showDetail() {

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ItemsViewController.swift
 //  Alarstudios test
 //
 //  Created by skarev on 26.08.2020.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ItemsViewController: UIViewController {
 
     //MARK: - Instances
     
-    weak var presenter: SecondPresenterProtocol?
+    weak var presenter: ItemsPresenterProtocol?
     
     //MARK: - Outlets
     
@@ -29,7 +29,7 @@ class SecondViewController: UIViewController {
 
 //MARK: - Extensions
 
-extension SecondViewController: UITableViewDataSource {
+extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -39,11 +39,11 @@ extension SecondViewController: UITableViewDataSource {
     }
 }
 
-extension SecondViewController: UITableViewDelegate {
+extension ItemsViewController: UITableViewDelegate {
     
 }
 
-extension SecondViewController: SecondViewProtocol {
+extension ItemsViewController: ItemsViewProtocol {
     func success() {
         
     }

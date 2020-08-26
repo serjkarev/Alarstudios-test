@@ -15,9 +15,9 @@
 		52CF4A9C24F6790B0039F801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CF4A9A24F6790B0039F801 /* LaunchScreen.storyboard */; };
 		52CF4AA824F679B20039F801 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF4AA724F679B20039F801 /* LoginViewController.xib */; };
 		52CF4AAA24F679E40039F801 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4AA924F679E40039F801 /* LoginPresenter.swift */; };
-		52CF4AB224F67AD50039F801 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4AB024F67AD50039F801 /* SecondViewController.swift */; };
-		52CF4AB324F67AD50039F801 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF4AB124F67AD50039F801 /* SecondViewController.xib */; };
-		52CF4AB524F67B050039F801 /* SecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4AB424F67B050039F801 /* SecondPresenter.swift */; };
+		52CF4AB224F67AD50039F801 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4AB024F67AD50039F801 /* ItemsViewController.swift */; };
+		52CF4AB324F67AD50039F801 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF4AB124F67AD50039F801 /* ItemsViewController.xib */; };
+		52CF4AB524F67B050039F801 /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4AB424F67B050039F801 /* ItemsPresenter.swift */; };
 		52CF4ABC24F67B7B0039F801 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4ABA24F67B7B0039F801 /* DetailViewController.swift */; };
 		52CF4ABD24F67B7B0039F801 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF4ABB24F67B7B0039F801 /* DetailViewController.xib */; };
 		52CF4ABF24F67B9A0039F801 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4ABE24F67B9A0039F801 /* DetailPresenter.swift */; };
@@ -42,9 +42,9 @@
 		52CF4A9D24F6790C0039F801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CF4AA724F679B20039F801 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		52CF4AA924F679E40039F801 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		52CF4AB024F67AD50039F801 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		52CF4AB124F67AD50039F801 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
-		52CF4AB424F67B050039F801 /* SecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPresenter.swift; sourceTree = "<group>"; };
+		52CF4AB024F67AD50039F801 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		52CF4AB124F67AD50039F801 /* ItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsViewController.xib; sourceTree = "<group>"; };
+		52CF4AB424F67B050039F801 /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
 		52CF4ABA24F67B7B0039F801 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		52CF4ABB24F67B7B0039F801 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		52CF4ABE24F67B9A0039F801 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		52CF4AAC24F67A890039F801 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				52CF4AB424F67B050039F801 /* SecondPresenter.swift */,
+				52CF4AB424F67B050039F801 /* ItemsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -169,8 +169,8 @@
 		52CF4AAD24F67A900039F801 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				52CF4AB024F67AD50039F801 /* SecondViewController.swift */,
-				52CF4AB124F67AD50039F801 /* SecondViewController.xib */,
+				52CF4AB024F67AD50039F801 /* ItemsViewController.swift */,
+				52CF4AB124F67AD50039F801 /* ItemsViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				52CF4A9C24F6790B0039F801 /* LaunchScreen.storyboard in Resources */,
 				52CF4A9924F6790B0039F801 /* Assets.xcassets in Resources */,
 				52CF4A9724F6790A0039F801 /* Main.storyboard in Resources */,
-				52CF4AB324F67AD50039F801 /* SecondViewController.xib in Resources */,
+				52CF4AB324F67AD50039F801 /* ItemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,14 +346,14 @@
 			files = (
 				52CF4AAA24F679E40039F801 /* LoginPresenter.swift in Sources */,
 				52CF4A9424F6790A0039F801 /* LoginViewController.swift in Sources */,
-				52CF4AB524F67B050039F801 /* SecondPresenter.swift in Sources */,
+				52CF4AB524F67B050039F801 /* ItemsPresenter.swift in Sources */,
 				52CF4ABF24F67B9A0039F801 /* DetailPresenter.swift in Sources */,
 				52E0B9B524F68FDF0083F89E /* AssemblyBuilder.swift in Sources */,
 				52E0B9AB24F68DE80083F89E /* NetworkService.swift in Sources */,
 				52E0B9AD24F68EBF0083F89E /* Auth.swift in Sources */,
 				52E0B9AF24F68ED40083F89E /* Item.swift in Sources */,
 				52CF4A9024F6790A0039F801 /* AppDelegate.swift in Sources */,
-				52CF4AB224F67AD50039F801 /* SecondViewController.swift in Sources */,
+				52CF4AB224F67AD50039F801 /* ItemsViewController.swift in Sources */,
 				52CF4A9224F6790A0039F801 /* SceneDelegate.swift in Sources */,
 				52CF4ABC24F67B7B0039F801 /* DetailViewController.swift in Sources */,
 				52E0B9B324F68F1D0083F89E /* Router.swift in Sources */,

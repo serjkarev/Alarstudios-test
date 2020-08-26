@@ -13,6 +13,10 @@ class DetailViewController: UIViewController {
     //MARK: - IBOutlets
     
     
+    //MARK: - Instances
+    
+    weak var presenter: DetailPresenterProtocol?
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {

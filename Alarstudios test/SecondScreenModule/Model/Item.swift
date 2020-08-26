@@ -8,6 +8,16 @@
 
 import Foundation
 
-struct Item {
-    
+struct Item: Codable {
+    let status: String
+    let page: Int
+    let data: [Datum]
+}
+
+struct Datum: Codable {
+    let id: String
+    let name: String
+    let country: String
+    let lat: Double
+    let lon: Double
 }
