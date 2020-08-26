@@ -9,13 +9,28 @@
 import Foundation
 
 protocol LoginViewProtocol: class {
-    
+    func success()
+    func failure(error: Error)
 }
 
 protocol LoginPresenterProtocol: class {
-    
+    init(view: LoginViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
+    func getEnter()
 }
 
-class LoginPresenter: LoginPresenterProtocol {
+class LoginPresenter: LoginPresenterProtocol {    
+    weak var view: LoginViewProtocol?
+    var networkService: NetworkServiceProtocol?
+    var router: RouterProtocol?
+    
+    required init(view: LoginViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
+        self.view = view
+        self.networkService = networkService
+        self.router = router
+    }
+    
+    func getEnter() {
+        
+    }
     
 }

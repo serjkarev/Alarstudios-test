@@ -9,13 +9,28 @@
 import Foundation
 
 protocol SecondViewProtocol: class {
-    
+    func success()
+    func failure(error: Error)
 }
 
 protocol SecondPresenterProtocol: class {
-    
+    init(view: SecondViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
+    func itemPressed()
 }
 
 class SecondPresenter: SecondPresenterProtocol {
+    weak var view: SecondViewProtocol?
+    var networkService: NetworkServiceProtocol?
+    var router: RouterProtocol?
+    
+    required init(view: SecondViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
+        self.view = view
+        self.networkService = networkService
+        self.router = router
+    }
+    
+    func itemPressed() {
+        
+    }
     
 }

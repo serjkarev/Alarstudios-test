@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,9 +21,17 @@
 		52CF4ABC24F67B7B0039F801 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4ABA24F67B7B0039F801 /* DetailViewController.swift */; };
 		52CF4ABD24F67B7B0039F801 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF4ABB24F67B7B0039F801 /* DetailViewController.xib */; };
 		52CF4ABF24F67B9A0039F801 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4ABE24F67B9A0039F801 /* DetailPresenter.swift */; };
+		52E0B9AB24F68DE80083F89E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B9AA24F68DE80083F89E /* NetworkService.swift */; };
+		52E0B9AD24F68EBF0083F89E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B9AC24F68EBF0083F89E /* Auth.swift */; };
+		52E0B9AF24F68ED40083F89E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B9AE24F68ED40083F89E /* Item.swift */; };
+		52E0B9B324F68F1D0083F89E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B9B224F68F1D0083F89E /* Router.swift */; };
+		52E0B9B524F68FDF0083F89E /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B9B424F68FDF0083F89E /* AssemblyBuilder.swift */; };
+		690F4C4197C8998D4AD86FDD /* Pods_Alarstudios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155A988B1D8FF87143F8974D /* Pods_Alarstudios_test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		155A988B1D8FF87143F8974D /* Pods_Alarstudios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarstudios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A264B62A3510F3D36FD4998 /* Pods-Alarstudios test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarstudios test.debug.xcconfig"; path = "Target Support Files/Pods-Alarstudios test/Pods-Alarstudios test.debug.xcconfig"; sourceTree = "<group>"; };
 		52CF4A8C24F6790A0039F801 /* Alarstudios test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarstudios test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CF4A8F24F6790A0039F801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CF4A9124F6790A0039F801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +48,12 @@
 		52CF4ABA24F67B7B0039F801 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		52CF4ABB24F67B7B0039F801 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		52CF4ABE24F67B9A0039F801 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		52E0B9AA24F68DE80083F89E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		52E0B9AC24F68EBF0083F89E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		52E0B9AE24F68ED40083F89E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		52E0B9B224F68F1D0083F89E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		52E0B9B424F68FDF0083F89E /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
+		9A740CC9E80857FFD6E9272D /* Pods-Alarstudios test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarstudios test.release.xcconfig"; path = "Target Support Files/Pods-Alarstudios test/Pods-Alarstudios test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +61,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690F4C4197C8998D4AD86FDD /* Pods_Alarstudios_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		526F5D226B1B0DE6998459F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				155A988B1D8FF87143F8974D /* Pods_Alarstudios_test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52CF4A8324F6790A0039F801 = {
 			isa = PBXGroup;
 			children = (
 				52CF4A8E24F6790A0039F801 /* Alarstudios test */,
 				52CF4A8D24F6790A0039F801 /* Products */,
+				909419F80478E946277E5248 /* Pods */,
+				526F5D226B1B0DE6998459F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,12 @@
 			children = (
 				52CF4A8F24F6790A0039F801 /* AppDelegate.swift */,
 				52CF4A9124F6790A0039F801 /* SceneDelegate.swift */,
-				52CF4AB624F67B430039F801 /* DetailScreenModule */,
-				52CF4AAB24F67A3A0039F801 /* SecondScreenModule */,
+				52E0B9B424F68FDF0083F89E /* AssemblyBuilder.swift */,
+				52E0B9B224F68F1D0083F89E /* Router.swift */,
+				52E0B9A924F68DD20083F89E /* Services */,
 				52CF4AA324F6793F0039F801 /* LoginScreenModule */,
+				52CF4AAB24F67A3A0039F801 /* SecondScreenModule */,
+				52CF4AB624F67B430039F801 /* DetailScreenModule */,
 				52CF4A9524F6790A0039F801 /* Main.storyboard */,
 				52CF4A9824F6790B0039F801 /* Assets.xcassets */,
 				52CF4A9A24F6790B0039F801 /* LaunchScreen.storyboard */,
@@ -115,6 +143,7 @@
 		52CF4AA624F679660039F801 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52E0B9AC24F68EBF0083F89E /* Auth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +178,7 @@
 		52CF4AAE24F67A960039F801 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52E0B9AE24F68ED40083F89E /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,7 +186,6 @@
 		52CF4AB624F67B430039F801 /* DetailScreenModule */ = {
 			isa = PBXGroup;
 			children = (
-				52CF4AB924F67B690039F801 /* Model */,
 				52CF4AB824F67B660039F801 /* View */,
 				52CF4AB724F67B600039F801 /* Presenter */,
 			);
@@ -180,11 +209,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		52CF4AB924F67B690039F801 /* Model */ = {
+		52E0B9A924F68DD20083F89E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				52E0B9AA24F68DE80083F89E /* NetworkService.swift */,
 			);
-			path = Model;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		909419F80478E946277E5248 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A264B62A3510F3D36FD4998 /* Pods-Alarstudios test.debug.xcconfig */,
+				9A740CC9E80857FFD6E9272D /* Pods-Alarstudios test.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52CF4AA024F6790C0039F801 /* Build configuration list for PBXNativeTarget "Alarstudios test" */;
 			buildPhases = (
+				BAEA7F15AE841100836148D4 /* [CP] Check Pods Manifest.lock */,
 				52CF4A8824F6790A0039F801 /* Sources */,
 				52CF4A8924F6790A0039F801 /* Frameworks */,
 				52CF4A8A24F6790A0039F801 /* Resources */,
+				2826B10AC9BA86502B34D7D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +297,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2826B10AC9BA86502B34D7D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alarstudios test/Pods-Alarstudios test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alarstudios test/Pods-Alarstudios test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alarstudios test/Pods-Alarstudios test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAEA7F15AE841100836148D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alarstudios test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52CF4A8824F6790A0039F801 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,10 +348,15 @@
 				52CF4A9424F6790A0039F801 /* LoginViewController.swift in Sources */,
 				52CF4AB524F67B050039F801 /* SecondPresenter.swift in Sources */,
 				52CF4ABF24F67B9A0039F801 /* DetailPresenter.swift in Sources */,
+				52E0B9B524F68FDF0083F89E /* AssemblyBuilder.swift in Sources */,
+				52E0B9AB24F68DE80083F89E /* NetworkService.swift in Sources */,
+				52E0B9AD24F68EBF0083F89E /* Auth.swift in Sources */,
+				52E0B9AF24F68ED40083F89E /* Item.swift in Sources */,
 				52CF4A9024F6790A0039F801 /* AppDelegate.swift in Sources */,
 				52CF4AB224F67AD50039F801 /* SecondViewController.swift in Sources */,
 				52CF4A9224F6790A0039F801 /* SceneDelegate.swift in Sources */,
 				52CF4ABC24F67B7B0039F801 /* DetailViewController.swift in Sources */,
+				52E0B9B324F68F1D0083F89E /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +498,7 @@
 		};
 		52CF4AA124F6790C0039F801 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A264B62A3510F3D36FD4998 /* Pods-Alarstudios test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -427,6 +516,7 @@
 		};
 		52CF4AA224F6790C0039F801 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A740CC9E80857FFD6E9272D /* Pods-Alarstudios test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

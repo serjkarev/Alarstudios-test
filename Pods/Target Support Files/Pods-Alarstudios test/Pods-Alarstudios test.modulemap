@@ -1,0 +1,6 @@
+framework module Pods_Alarstudios_test {
+  umbrella header "Pods-Alarstudios test-umbrella.h"
+
+  export *
+  module * { export * }
+}

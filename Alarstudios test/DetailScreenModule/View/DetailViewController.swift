@@ -10,9 +10,20 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    //MARK: - IBOutlets
+    
+    
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+}
+
+//MARK: - Extensions
+
+extension DetailViewController: DetailViewProtocol {
     
 }

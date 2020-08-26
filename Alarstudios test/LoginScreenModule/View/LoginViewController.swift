@@ -10,11 +10,38 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var loginTextField: UITextField?
+    @IBOutlet weak var passwordTextField: UITextField?
+    
+    //MARK: - Instances
+    
+    weak var presenter: LoginPresenterProtocol?
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    //MARK: - IBActions
+    
+    @IBAction func enterButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+}
 
+//MARK: - Extensions
+
+extension LoginViewController: LoginViewProtocol {
+    func success() {
+        
+    }
+    
+    func failure(error: Error) {
+        
+    }
 }
 
