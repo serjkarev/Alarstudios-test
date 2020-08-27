@@ -8,13 +8,16 @@
 
 import UIKit
 
+//MARK: - AssemblyBuilderProtocol
 protocol AssemblyBuilderProtocol {
     func createLoginModule(router: RouterProtocol) -> UIViewController
     func createItemsModule(auth: Auth?, router: RouterProtocol) -> UIViewController
-    func createDetailModule(router: RouterProtocol) -> UIViewController
+    func createDetailModule(item: Datum, router: RouterProtocol) -> UIViewController
 }
 
+//MARK: - AssemblyBuilder
 class AssemblyBuilder: AssemblyBuilderProtocol {
+    //MARK: - AssemblyBuilderProtocol methods
     func createLoginModule(router: RouterProtocol) -> UIViewController {
         let view = LoginViewController()
         let networkService = NetworkService()
@@ -31,9 +34,9 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         return view
     }
     
-    func createDetailModule(router: RouterProtocol) -> UIViewController {
+    func createDetailModule(item: Datum, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
-        let presenter = DetailPresenter(view: view, router: router)
+        let presenter = DetailPresenter(view: view, item: item, router: router)
         view.presenter = presenter
         return view
     }

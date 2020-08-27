@@ -8,12 +8,14 @@
 
 import Foundation
 
+//MARK: - Item
 struct Item: Codable {
     let status: String
     let page: Int
     let data: [Datum]
 }
 
+//MARK: - Datum
 struct Datum: Codable {
     let id: String
     let name: String

@@ -8,22 +8,25 @@
 
 import Foundation
 
+//MARK: - Status
 enum Status: String, Error {
     case ok = "ok"
     case error = "error"
     case undefined
 }
 
+//MARK: - NetworkServiceProtocol
 protocol NetworkServiceProtocol : class {
     func getAuth(userName: String, password: String, completion: @escaping (Result<Auth?, Error>) -> Void)
     func getItemsFor(code: String?, page: Int, completion: @escaping (Result<Item?, Error>) -> Void)
 }
 
+//MARK: - NetworkServiceProtocol
 class NetworkService: NetworkServiceProtocol {
     private let scheme = "https"
     private let host = "www.alarstudios.com"
     
-    
+    //MARK: - NetworkServiceProtocol methods
     func getAuth(userName: String, password: String, completion: @escaping (Result<Auth?, Error>) -> Void) {
         let path = "/test/auth.cgi"
         var urlComponents = URLComponents()
@@ -34,7 +37,7 @@ class NetworkService: NetworkServiceProtocol {
         URLQueryItem(name: "username", value: userName),
         URLQueryItem(name: "password", value: password)]
         guard let url = urlComponents.url else { return }
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -60,8 +63,6 @@ class NetworkService: NetworkServiceProtocol {
         urlComponents.scheme = self.scheme
         urlComponents.host = self.host
         urlComponents.path = path
-        print(page)
-        print(code)
         urlComponents.queryItems = [URLQueryItem(name: "code", value: code),
                                     URLQueryItem(name: "p", value: String(page))]
         guard let url = urlComponents.url else { return }

@@ -8,27 +8,32 @@
 
 import UIKit
 
+//MARK: - MainRouter protocol
 protocol MainRouter {
     var navigationController: UINavigationController? { get set }
     var assemblyBuilder: AssemblyBuilderProtocol? { get set }
 }
 
+//MARK: - RouterProtocol
 protocol RouterProtocol: MainRouter {
     func initialViewController()
     func showItems(auth: Auth?)
-    func showDetail()
-//    func popToRoot()
+    func showDetail(_ item: Datum)
 }
 
+//MARK: - RouterProtocol
 class Router: RouterProtocol {
+    //MARK: - Instances
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
     
+    //MARK: - Init
     init(navigationController: UINavigationController, assemblyBuilder: AssemblyBuilderProtocol) {
         self.navigationController = navigationController
         self.assemblyBuilder = assemblyBuilder
     }
     
+    //MARK: - RouterProtocol methods
     func initialViewController() {
         if let navigationController = navigationController {
             guard let loginViewController = assemblyBuilder?.createLoginModule(router: self) else { return }
@@ -43,9 +48,10 @@ class Router: RouterProtocol {
         }
     }
     
-    func showDetail() {
-        
+    func showDetail(_ item: Datum) {
+        if let navigationController = navigationController {
+            guard let detailViewController = assemblyBuilder?.createDetailModule(item: item, router: self) else { return }
+            navigationController.pushViewController(detailViewController, animated: true)
+        }
     }
-    
-    
 }

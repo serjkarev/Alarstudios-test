@@ -8,11 +8,13 @@
 
 import Foundation
 
+//MARK: - LoginViewProtocol
 protocol LoginViewProtocol: class {
     func success()
     func failure(error: Error)
 }
 
+//MARK: - LoginPresenterProtocol
 protocol LoginPresenterProtocol: class {
     init(view: LoginViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getEnter(userName: String?, passord: String?)
@@ -21,18 +23,22 @@ protocol LoginPresenterProtocol: class {
     var auth: Auth? { get set }
 }
 
-class LoginPresenter: LoginPresenterProtocol {    
+//MARK: - LoginPresenter
+class LoginPresenter: LoginPresenterProtocol {
+    //MARK: -
     weak var view: LoginViewProtocol?
     var networkService: NetworkServiceProtocol?
     var router: RouterProtocol?
     var auth: Auth?
     
+    //MARK: - Init
     required init(view: LoginViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkService = networkService
         self.router = router
     }
     
+    //MARK: - LoginPresenterProtocol methods
     func getEnter(userName: String?, passord: String?) {
         guard let name = userName, let pass = passord else { return }
         networkService?.getAuth(userName: name, password: pass, completion: { [weak self] result in
@@ -52,5 +58,4 @@ class LoginPresenter: LoginPresenterProtocol {
     func goToItemsList() {
         router?.showItems(auth: auth)
     }
-    
 }

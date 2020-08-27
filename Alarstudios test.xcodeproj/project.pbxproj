@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52373D3024F7C11B0068F746 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52373D2E24F7C11B0068F746 /* ItemTableViewCell.swift */; };
+		52373D3124F7C11B0068F746 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52373D2F24F7C11B0068F746 /* ItemTableViewCell.xib */; };
 		52CF4A9024F6790A0039F801 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4A8F24F6790A0039F801 /* AppDelegate.swift */; };
 		52CF4A9224F6790A0039F801 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4A9124F6790A0039F801 /* SceneDelegate.swift */; };
 		52CF4A9424F6790A0039F801 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF4A9324F6790A0039F801 /* LoginViewController.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		155A988B1D8FF87143F8974D /* Pods_Alarstudios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarstudios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A264B62A3510F3D36FD4998 /* Pods-Alarstudios test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarstudios test.debug.xcconfig"; path = "Target Support Files/Pods-Alarstudios test/Pods-Alarstudios test.debug.xcconfig"; sourceTree = "<group>"; };
+		52373D2E24F7C11B0068F746 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		52373D2F24F7C11B0068F746 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		52CF4A8C24F6790A0039F801 /* Alarstudios test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarstudios test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CF4A8F24F6790A0039F801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CF4A9124F6790A0039F801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52373D2D24F7C0CE0068F746 /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				52373D2E24F7C11B0068F746 /* ItemTableViewCell.swift */,
+				52373D2F24F7C11B0068F746 /* ItemTableViewCell.xib */,
+			);
+			path = ItemCell;
+			sourceTree = "<group>";
+		};
 		526F5D226B1B0DE6998459F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +184,7 @@
 			children = (
 				52CF4AB024F67AD50039F801 /* ItemsViewController.swift */,
 				52CF4AB124F67AD50039F801 /* ItemsViewController.xib */,
+				52373D2D24F7C0CE0068F746 /* ItemCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +305,7 @@
 				52CF4A9C24F6790B0039F801 /* LaunchScreen.storyboard in Resources */,
 				52CF4A9924F6790B0039F801 /* Assets.xcassets in Resources */,
 				52CF4A9724F6790A0039F801 /* Main.storyboard in Resources */,
+				52373D3124F7C11B0068F746 /* ItemTableViewCell.xib in Resources */,
 				52CF4AB324F67AD50039F801 /* ItemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +371,7 @@
 				52CF4AB224F67AD50039F801 /* ItemsViewController.swift in Sources */,
 				52CF4A9224F6790A0039F801 /* SceneDelegate.swift in Sources */,
 				52CF4ABC24F67B7B0039F801 /* DetailViewController.swift in Sources */,
+				52373D3024F7C11B0068F746 /* ItemTableViewCell.swift in Sources */,
 				52E0B9B324F68F1D0083F89E /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

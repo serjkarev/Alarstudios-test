@@ -9,19 +9,15 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
     //MARK: - IBOutlets
-    
     @IBOutlet weak var loginTextField: UITextField?
     @IBOutlet weak var passwordTextField: UITextField?
     @IBOutlet weak var spinner: UIActivityIndicatorView?
     
     //MARK: - Instances
-    
     var presenter: LoginPresenterProtocol?
     
     //MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login"
@@ -32,6 +28,7 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    //MARK: - Private methods
     private func showAlert() {
         let alert = UIAlertController(title: "Error", message: "Username or Password was entered incorrectly. Please try again", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -54,7 +51,6 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - IBActions
-    
     @IBAction func enterButtonPressed(_ sender: UIButton?) {
         showSpinner()
         presenter?.getEnter(userName: loginTextField?.text, passord: passwordTextField?.text)
@@ -64,6 +60,7 @@ class LoginViewController: UIViewController {
 
 //MARK: - Extensions
 
+    //MARK: - UITextFieldDelegate methods
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -72,6 +69,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+    //MARK: - LoginViewProtocol methods
 extension LoginViewController: LoginViewProtocol {
     func success() {
         presenter?.goToItemsList()
